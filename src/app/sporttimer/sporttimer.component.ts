@@ -25,10 +25,10 @@ export class SporttimerComponent implements OnInit, TimerEvent {
    }
 
   @Input()
-  durationPause: number = 5;
+  durationPause: number = 10;
 
   @Input()
-  durationWorkout: number = 10;
+  durationWorkout: number = 40;
 
   buttonState = ButtonState.Go;
   modus = TimerState.Workout;
@@ -66,7 +66,8 @@ export class SporttimerComponent implements OnInit, TimerEvent {
     this.current = duration;
    
     console.log("start");
-    this.timer = this.tm.generateTimer(duration, this).start();
+    this.timer = this.tm.generateTimer(duration, this);
+    this.timer.start();
   }
 
   private start() {

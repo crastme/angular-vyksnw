@@ -13,13 +13,19 @@ enum Mode {
 })
 export class AppComponent implements OnInit  {
   name = 'TPG :: stay healthy timer';
-  timeWorkout = 10;
-  timePause = 5;
+  timeWorkout = 40;
+  timePause = 10;
   started = false;
   status = "Stopped";
   interval;
   mode = Mode.Workout;
   currentValue = 0;
+  listimagesWorkout = [
+"https://rellez.de/thomas/movie.jpg",
+"https://rellez.de/thomas/300.jpg",
+"https://rellez.de/thomas/saiyan.jpg",
+"https://rellez.de/thomas/blade.jpg" 
+  ];
 
   private audioContext: AudioContext;
 

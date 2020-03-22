@@ -1,25 +1,49 @@
 <table>
   <tr>
     <td>
-DurationWorkout:
+Workout (sec):
     </td>
     <td>
-{{durationWorkout}}s
+      <ng-number-picker [(value)]="durationWorkout" ></ng-number-picker>
     </td>
+    <td rowspan="2"> <button (click)="handleStart($event)" >{{buttonState}}</button></td>
   </tr>
   <tr>
     <td>
-DurationPause:
+Rest (sec):
     </td>
     <td>
-{{durationPause}}s
+      <ng-number-picker [(value)]="durationPause"></ng-number-picker>
+
     </td>
   </tr>
 </table>
- <button (click)="handleStart($event)" >{{buttonState}}</button>
- <br />
- <span>{{modus}}</span>
- <br />
- <span>To Go:{{current}}</span>
- <br />
- <span>Rounds: {{rounds}}</span>
+<hr />
+<div class="diver">
+<table>
+  <tr>
+    <td>
+Rounds: 
+    </td>
+    <td>
+{{rounds}}
+    </td>
+  </tr>
+   <tr>
+    <td>
+Modus: 
+    </td>
+    <td>
+{{modus}}
+    </td>
+  </tr>
+   <tr>
+    <td>
+Timer: 
+    </td>
+    <td>
+{{current}}
+    </td>
+  </tr>
+</table>
+</div><span>hallo</span>

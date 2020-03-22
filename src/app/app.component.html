@@ -1,4 +1,16 @@
 <hello name="{{ name }}"></hello>
-<app-sporttimer [durationPause]="timePause" [durationWorkout]="timeWorkout"></app-sporttimer>
+<app-sporttimer [durationPause]="timePause" [durationWorkout]="timeWorkout" class="sporty"></app-sporttimer>
 <br />
 <span></span>
+
+<h1>not creative? use one of the workouts here!</h1>
+<table>
+  <tr>
+    <td *ngFor="let image of listimagesWorkout"> 
+      <a href="image" target="_blank" referrerpolicy="no-referrer">
+        <img id="imgMovie" src="{{image}}" name="bilder" class="image">
+        </a>
+    </td>
+  </tr>
+</table>
+

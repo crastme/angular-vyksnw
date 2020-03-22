@@ -20,6 +20,9 @@ Rest (sec):
 </table>
 <hr />
 <div class="diver">
+  <table>
+    <tr>
+      <td>
 <table>
   <tr>
     <td>
@@ -46,4 +49,11 @@ Timer:
     </td>
   </tr>
 </table>
-</div><span>hallo</span>
+      </td>
+      <td>
+        <img *ngIf="modus == 'Rest'" src="{{restImage}}" />
+        <img *ngIf="modus == 'Workout'"  src="{{workImage}}" />
+      </td>
+    </tr>
+  </table>
+</div>

@@ -9,7 +9,8 @@ enum ButtonState {
 
 enum TimerState {
   Workout = "Workout",
-  Pause = "Pause"
+  Pause = "Rest",
+  None = ""
 }
 
 @Component({
@@ -31,10 +32,13 @@ export class SporttimerComponent implements OnInit, TimerEvent {
   durationWorkout: number = 40;
 
   buttonState = ButtonState.Go;
-  modus = TimerState.Workout;
+  modus = TimerState.None;
   current: number = 0;
   rounds: number = 0;
   timer: TimerWork;
+
+  workImage = "https://rellez.de/thomas/workout.gif";
+  restImage = "https://rellez.de/thomas/rest.gif";
 
   triggered(value:number) {
     //console.log("triggered:"+value);
@@ -71,6 +75,7 @@ export class SporttimerComponent implements OnInit, TimerEvent {
   }
 
   private start() {
+    this.modus = TimerState.Workout;
     this.rounds = 1;
     this.buttonState = ButtonState.Stop
     console.log("start");
@@ -78,9 +83,11 @@ export class SporttimerComponent implements OnInit, TimerEvent {
   }
 
   private stop() {
+    this.modus = TimerState.None;
     this.buttonState = ButtonState.Go
     console.log("stop");
     this.timer.stop();
+
   }
 
   ngOnInit() {

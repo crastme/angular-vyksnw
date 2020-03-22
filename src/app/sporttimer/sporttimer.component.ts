@@ -37,6 +37,7 @@ export class SporttimerComponent implements OnInit, TimerEvent {
   timer: TimerWork;
 
   triggered(value:number) {
+    //console.log("triggered:"+value);
     this.current = value;
   };
 

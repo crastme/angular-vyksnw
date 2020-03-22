@@ -5,16 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { SporttimerComponent } from './sporttimer/sporttimer.component';
-import { TimerModule } from './sporttimer/timer/timer.module';
-import { SounderModule } from './sporttimer/sounder/sounder.module';
+import { TimerModule } from './sporttimer/timer/timer/timer.module';
 
 
 @NgModule({
   imports:      [ 
     BrowserModule, 
     FormsModule, 
-    TimerModule, 
-    SounderModule
+    TimerModule
     ],
   declarations: [ AppComponent, HelloComponent, SporttimerComponent ],
   bootstrap:    [ AppComponent ]

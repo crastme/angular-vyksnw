@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TimerModule, TimerWork } from './timer/timer.module';
-import { SounderModule } from './sounder/sounder.module';
+import { TimerModule, TimerEvent, TimerWork } from './timer/timer/timer.module';
 
 
 enum ButtonState {
@@ -22,7 +21,7 @@ export class SporttimerComponent implements OnInit, TimerEvent {
   
  
  
-  constructor(private tm: TimerModule, private sm: SounderModule) {
+  constructor(private tm : TimerModule) {
    }
 
   @Input()
@@ -45,11 +44,11 @@ export class SporttimerComponent implements OnInit, TimerEvent {
      if(this.modus == TimerState.Pause) {
           this.modus = TimerState.Workout;
           this.rounds++;
-           this.sm.playStart();
+           //this.sm.playStart();
           this.startTimer(this.durationWorkout);
         } else {
           this.modus = TimerState.Pause;
-           this.sm.playPause();
+           //this.sm.playPause();
           this.startTimer(this.durationPause);
         }        
   }

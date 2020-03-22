@@ -49,10 +49,12 @@ export class SporttimerComponent implements OnInit, TimerEvent {
      if(this.modus == TimerState.Pause) {
           this.modus = TimerState.Workout;
           this.rounds++;
+           this.playWorkout();
            //this.sm.playStart();
           this.startTimer(this.durationWorkout);
         } else {
           this.modus = TimerState.Pause;
+          this.playRest();
            //this.sm.playPause();
           this.startTimer(this.durationPause);
         }        
@@ -66,6 +68,21 @@ export class SporttimerComponent implements OnInit, TimerEvent {
     }
   }
 
+  playWorkout() {
+    var audio = new Audio();
+audio.src = "https://rellez.de/thomas/workout.wav"
+audio.load();
+audio.play();
+  }
+
+  playRest() {
+    var audio = new Audio();
+audio.src = "https://rellez.de/thomas/rest.wav"
+audio.load();
+audio.play();
+
+  }
+
   private startTimer(duration:number){
     this.current = duration;
    
@@ -75,11 +92,13 @@ export class SporttimerComponent implements OnInit, TimerEvent {
   }
 
   private start() {
+    
     this.modus = TimerState.Workout;
     this.rounds = 1;
     this.buttonState = ButtonState.Stop
     console.log("start");
     this.startTimer(this.durationWorkout);
+    this.playWorkout();
   }
 
   private stop() {
@@ -87,7 +106,7 @@ export class SporttimerComponent implements OnInit, TimerEvent {
     this.buttonState = ButtonState.Go
     console.log("stop");
     this.timer.stop();
-
+    this.playRest();
   }
 
   ngOnInit() {

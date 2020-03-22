@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TimerModule, TimerEvent, TimerWork } from './timer/timer/timer.module';
+import { TimerModule, TimerEvent, TimerWork } from './timer/timer.module';
 
 
 enum ButtonState {
